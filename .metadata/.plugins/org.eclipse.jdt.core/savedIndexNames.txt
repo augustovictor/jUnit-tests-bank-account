@@ -1,3 +1,0 @@
-INDEX VERSION 1.127+/Users/victoraweb/eclipse/jUnit-tests-bank-account/.metadata/.plugins/org.eclipse.jdt.core
-2545294107.index
-3160029992.index
