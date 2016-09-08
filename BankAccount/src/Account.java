@@ -19,11 +19,13 @@ public class Account {
         this.balance = balance;
     }
 
-    public void makeDeposit(Double amount) {
+    public void makeDeposit(Double amount) throws InvalidAmountException {
+    	if(amount < 0) throw new InvalidAmountException();
         setBalance(this.balance += amount);
     }
 
-    public void makeWithdrawal(double amout) {
-        setBalance(this.balance -= amout);
+    public void makeWithdrawal(double amount) throws InvalidAmountException {
+    	if(amount < 0) throw new InvalidAmountException();
+        setBalance(this.balance -= amount);
     }
 }
