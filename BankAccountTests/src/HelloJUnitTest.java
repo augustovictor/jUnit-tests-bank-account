@@ -44,7 +44,6 @@ public class HelloJUnitTest {
 	}
 	
 	@Test
-	@Ignore
 	public void WhenWithdrawalAccountBalanceDecreases() throws InvalidAmountException {
 		account.makeDeposit(10.0);
 		account.makeWithdrawal(5);
@@ -57,6 +56,7 @@ public class HelloJUnitTest {
 	}
 	
 	@Test(timeout = 200)
+	@Ignore
 	public void timeoutTest() {
 		for (int i = 0; i < 100000; i++) {
 			System.out.println("Timeout did not occur");
