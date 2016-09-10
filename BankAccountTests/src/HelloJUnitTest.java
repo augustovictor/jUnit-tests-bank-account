@@ -7,6 +7,7 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
+import static org.hamcrest.CoreMatchers.*;
 
 public class HelloJUnitTest {
 	
@@ -43,7 +44,10 @@ public class HelloJUnitTest {
 	@Category(GoodTestsCategory.class)
 	public void WhenMakingDepositAccountBalanceIncreases() throws InvalidAmountException {
 		account.makeDeposit(10.0);
-		assertEquals("Account balance was not correct after.", 10.0, account.getBalance(), 0);
+		assertThat(account.getBalance(), allOf(
+				is(10.0),
+				instanceOf(Double.class)
+				));
 	}
 	
 	@Test
@@ -61,7 +65,7 @@ public class HelloJUnitTest {
 	}
 	
 	@Test(timeout = 200)
-//	@Ignore
+	@Ignore
 	public void timeoutTest() {
 		for (int i = 0; i < 100000; i++) {
 			System.out.println("Timeout did not occur");
