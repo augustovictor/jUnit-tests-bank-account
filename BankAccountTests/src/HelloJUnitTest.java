@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 public class HelloJUnitTest {
 	
@@ -33,17 +34,20 @@ public class HelloJUnitTest {
 	}
 
 	@Test
+	@Category({GoodTestsCategory.class, BadTestsCategory.class})
 	public void NewAccountNumberIs123() {
 		assertEquals("Account number is not 123", "123", account.getNumber());
 	}
 	
 	@Test
+	@Category(GoodTestsCategory.class)
 	public void WhenMakingDepositAccountBalanceIncreases() throws InvalidAmountException {
 		account.makeDeposit(10.0);
 		assertEquals("Account balance was not correct after.", 10.0, account.getBalance(), 0);
 	}
 	
 	@Test
+	@Category(GoodTestsCategory.class)
 	public void WhenWithdrawalAccountBalanceDecreases() throws InvalidAmountException {
 		account.makeDeposit(10.0);
 		account.makeWithdrawal(5);
@@ -51,12 +55,13 @@ public class HelloJUnitTest {
 	}
 	
 	@Test(expected = InvalidAmountException.class)
+	@Category(GoodTestsCategory.class)
 	public void WhenAmountProvidedNegativeExceptionIsThrown() throws InvalidAmountException {
 		account.makeDeposit(-5.0);
 	}
 	
 	@Test(timeout = 200)
-	@Ignore
+//	@Ignore
 	public void timeoutTest() {
 		for (int i = 0; i < 100000; i++) {
 			System.out.println("Timeout did not occur");
