@@ -130,3 +130,17 @@
     - No método de teste:
         - `thrown.expect(InvalidAmountException.class);`
         - `thrown.expectMessage(“Esta mensagem é esperada”); // Case sensitive`
+
+### Theories
+
+-	De forma similar ao teste parametrizado, as **Theories** também recebem um parâmetro *input* e tem uma saída esperada. A diferença é apenas os *inputs* variam, e a saída esperada permanece a mesma sempre.
+
+#### Como criar uma theory:
+
+- `import static org.junit.Assert.*;`;
+- Criar uma classe sob a anotation `@RunWith(Theories.class)`;
+- Criar um array de inputs sob a anotation `@DataPoints`;
+- Criar um método de teste sob a anotation `@Theory`;
+- Exemplo de assert no método: `assertTrue(acc.getBalance() > 0);`;
+
+**Ps:** Pode-se também fazer uso do método `Assume.assumeTrue(value > 0);` para ignorar os valores que não atendam esta condição.

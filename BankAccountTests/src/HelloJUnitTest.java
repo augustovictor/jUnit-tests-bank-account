@@ -5,8 +5,12 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
+import org.junit.rules.ExpectedException;
+import org.junit.rules.Timeout;
+
 import static org.hamcrest.CoreMatchers.*;
 
 public class HelloJUnitTest {
@@ -58,14 +62,23 @@ public class HelloJUnitTest {
 		assertEquals("Account balance was not correct.", 5.0, account.getBalance(), 0);
 	}
 	
-	@Test(expected = InvalidAmountException.class)
+	@Rule
+	public ExpectedException thrown = ExpectedException.none();
+	
+	@Test
 	@Category(GoodTestsCategory.class)
 	public void WhenAmountProvidedNegativeExceptionIsThrown() throws InvalidAmountException {
+		thrown.expect(InvalidAmountException.class);
+//		thrown.expectMessage("Negative values are not allowed");
+		thrown.expectMessage(containsString("not allowed")); // Case sensitive 
 		account.makeDeposit(-5.0);
 	}
 	
-	@Test(timeout = 200)
-	@Ignore
+	@Rule
+	public Timeout timeout = new Timeout(20);
+	
+	@Test
+//	@Ignore
 	public void timeoutTest() {
 		for (int i = 0; i < 100000; i++) {
 			System.out.println("Timeout did not occur");

@@ -20,12 +20,12 @@ public class Account {
     }
 
     public void makeDeposit(Double amount) throws InvalidAmountException {
-    	if(amount < 0) throw new InvalidAmountException();
+    	if(amount < 0) throw new InvalidAmountException("Negative values are not allowed");
         setBalance(this.balance += amount);
     }
 
     public void makeWithdrawal(double amount) throws InvalidAmountException {
-    	if(amount < 0) throw new InvalidAmountException();
+    	if(amount < 0) throw new InvalidAmountException("Negative values are not allowed");
         setBalance(this.balance -= amount);
         if(getBalance() < 0) {
         	setBalance(0.0);
