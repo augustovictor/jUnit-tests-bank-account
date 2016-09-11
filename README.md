@@ -1,4 +1,7 @@
 # JUnit
+Aplicação de testes e boas práticas com JUnit usando Eclipse.
+<br />
+<br />
 <i>Última atualização: 11 de setembro, 2016 </i>
 
 ## Index:
@@ -216,3 +219,10 @@ OK (4 tests)
 	- Abaixo da linha `<sourceDirectory>src</sourceDirectory>` insira `<testSourceDirectory>src</testSourceDirectory>`;
 - Os arquivos de testes serão executados apenas se o nome deles terminar com `Test.java`;
 - Para testar, clique com o botão direito no projeto > Run as > Maven test;
+
+##### Code coverage com EclEmma
+- No ide abra Help > Eclipse Marktplace;
+- Procurar por EclEmma e instalar;
+- Após o Eclipse reiniciar você irá ver um novo ícone na toolbar (Um ícone verde de 'play' sobre uma barra de progresso verde e vermelha. Oitavo ícone, no meu caso);
+- Clique sobre o projeto de testes, para que fique selecionado, e então no dropdown do menu descrito acima > Coverage as > JUnit Test;
+- No console você irá ver um relatório de % da cobertura das classes, e se abrir as classes irá ver um background verde no que está coberto por testes ou vermelho, caso determinado bloco não esteja sendo coberto;
