@@ -1,3 +1,7 @@
+package com.augustovictor.bankaccount.tests;
+
+
+
 import static org.junit.Assert.*;
 
 import java.util.Arrays;
@@ -7,6 +11,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
+
+import com.augustovictor.bankaccount.Account;
+import com.augustovictor.bankaccount.InvalidAmountException;
 
 @RunWith(Parameterized.class)
 public class ParameterizedTests {

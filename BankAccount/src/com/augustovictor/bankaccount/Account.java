@@ -1,3 +1,4 @@
+package com.augustovictor.bankaccount;
 
 public class Account {
     private String number = "123";

@@ -1,10 +1,13 @@
 # JUnit
-<i>Última atualização: 10 de setembro, 2016 </i>
+<i>Última atualização: 11 de setembro, 2016 </i>
 
 ## Index:
 1. [JUnit Overview](#overview)
 2. [JUnit Basics](#basics)
 3. [Advanced JUnit](#advanced)
+4. [JUnit Integration](#integration)
+
+<hr>
 
 ### 1. <a name="overview"></a>JUnit Overview
 
@@ -30,7 +33,7 @@
 
 <hr>
 
-### <a name="basics"></a>JUnit Basics
+### 2. <a name="basics"></a>JUnit Basics
 
 #### Anotations básicas
 - `@Test` - Identifica um método de teste;
@@ -62,7 +65,7 @@
 
 <hr>
 
-### <a name="advanced"></a>Advanced JUnit
+### 3. <a name="advanced"></a>Advanced JUnit
 #### Test Suits
 * Agrupamento de várias classes de teste para serem executadas em grupo;
 
@@ -135,7 +138,7 @@
 
 -	De forma similar ao teste parametrizado, as **Theories** também recebem um parâmetro *input* e tem uma saída esperada. A diferença é apenas os *inputs* variam, e a saída esperada permanece a mesma sempre.
 
-#### Como criar uma theory:
+##### Como criar uma theory:
 
 - `import static org.junit.Assert.*;`;
 - Criar uma classe sob a anotation `@RunWith(Theories.class)`;
@@ -144,3 +147,48 @@
 - Exemplo de assert no método: `assertTrue(acc.getBalance() > 0);`;
 
 **Ps:** Pode-se também fazer uso do método `Assume.assumeTrue(value > 0);` para ignorar os valores que não atendam esta condição.
+
+<hr />
+
+### 4. <a name="integration"></a>JUnit Integration
+
+- O **JUnit Runner** integrado à IDE é bastante útil para executar os testes de maneira rápida, porém não é a melhor opção para automação de testes com JUnit. Felizmente o **JUnit Framework** traz meios alternativos melhores para este fim;
+- A primeira opção é fazer uso da classe **Runner**, integrada ao framework, e executar o JUnit através dela, diretamente de um código java. Desta maneira podemos criar uma aplicação e de dentro dela executar a classe de testes, além de manter uma aplicação *standalone**;
+- Outra alternativa é invocar o **JUnit Runner** através da linha de comando;
+	- Para fazer isso devemos fazer da seguinte forma:
+		- `java RunnerClass.class;`
+
+##### Como criar uma classe de testes automatizados:
+
+###### Através de uma classe
+
+- [ ] Crie uma classe com ponto de entrada principal `public static void main(String args[]) {}`;
+- [ ] Declare uma variável do tipo `JUnitCore` e a inicialize;
+- [ ] Para visualizar os outputs no console, adicione um listener na variável criada `junit.addListener(TextListener(System.out))`;
+- [ ] Defina a execução dos testes através da variável criada `junit.run(TargetTestsClass.class);`;
+
+###### Através da linha de comando
+- [ ] Baixar as duas libs necessárias [junit e hamcrest](https://github.com/junit-team/junit4/wiki/Download-and-Install); Ps: No site de cada uma, baixar as versões **jar**;
+- [ ] Criar um pacote de testes e mover as classes de teste;
+	- **ps:** se você estiver com erros de import, crie no projeto que contém as classes a serem importadas um pacote diferente do default e mova as classes para dentro dele;
+- [ ] Selecione a raiz dos dois projetos (Target e Testes), e os exporte como **JAR FILE**;
+	- A razão para termos exportado os dois projetos em um mesmo JAR é que na linha de comando teremos que especificar qual o path para os arquivos JAR do JUnit e para as nossas classes; No meu caso foi:
+	`java -cp junit-4.12.jar:hamcrest-core-1.3.jar:BankAccount.jar org.junit.runner.JUnitCore com.augustovictor.bankaccount.tests.HelloJUnitTest
+`
+```
+JUnit version 4.12
+Executed before class
+I.Before
+After (Used when rolling back created data)
+.Before
+After (Used when rolling back created data)
+.Before
+After (Used when rolling back created data)
+.Before
+After (Used when rolling back created data)
+Executed after class
+
+Time: 0.017
+
+OK (4 tests)
+```

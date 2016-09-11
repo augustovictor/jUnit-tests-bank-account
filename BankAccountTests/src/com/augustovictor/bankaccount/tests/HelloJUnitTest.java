@@ -1,3 +1,7 @@
+package com.augustovictor.bankaccount.tests;
+
+
+
 import static org.junit.Assert.*;
 
 import org.junit.After;
@@ -10,6 +14,9 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.rules.ExpectedException;
 import org.junit.rules.Timeout;
+
+import com.augustovictor.bankaccount.Account;
+import com.augustovictor.bankaccount.InvalidAmountException;
 
 import static org.hamcrest.CoreMatchers.*;
 
@@ -78,7 +85,7 @@ public class HelloJUnitTest {
 	public Timeout timeout = new Timeout(20);
 	
 	@Test
-//	@Ignore
+	@Ignore
 	public void timeoutTest() {
 		for (int i = 0; i < 100000; i++) {
 			System.out.println("Timeout did not occur");

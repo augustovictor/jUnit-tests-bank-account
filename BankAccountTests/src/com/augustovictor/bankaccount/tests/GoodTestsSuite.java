@@ -1,3 +1,7 @@
+package com.augustovictor.bankaccount.tests;
+
+
+
 import org.junit.experimental.categories.Categories;
 import org.junit.experimental.categories.Categories.ExcludeCategory;
 import org.junit.experimental.categories.Categories.IncludeCategory;

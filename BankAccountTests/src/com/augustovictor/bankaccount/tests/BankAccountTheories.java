@@ -1,7 +1,15 @@
+package com.augustovictor.bankaccount.tests;
+
+
+
 import org.junit.experimental.theories.DataPoints;
 import org.junit.experimental.theories.Theories;
 import org.junit.experimental.theories.Theory;
 import org.junit.runner.RunWith;
+
+import com.augustovictor.bankaccount.Account;
+import com.augustovictor.bankaccount.InvalidAmountException;
+
 import static org.junit.Assert.*;
 
 import org.junit.Assume;
