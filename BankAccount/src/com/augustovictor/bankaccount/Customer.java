@@ -1,3 +1,6 @@
+package com.augustovictor.bankaccount;
+
+import java.util.List;
 
 public class Customer {
     private String number;

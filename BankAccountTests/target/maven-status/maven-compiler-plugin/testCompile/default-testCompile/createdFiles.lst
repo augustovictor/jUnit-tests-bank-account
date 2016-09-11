@@ -1,0 +1,8 @@
+com/augustovictor/bankaccount/tests/ConsoleRunner.class
+com/augustovictor/bankaccount/tests/GoodTestsCategory.class
+com/augustovictor/bankaccount/tests/GoodTestsSuite.class
+com/augustovictor/bankaccount/tests/BankAccountTheories.class
+com/augustovictor/bankaccount/tests/BadTestsCategory.class
+com/augustovictor/bankaccount/tests/ParameterizedTests.class
+com/augustovictor/bankaccount/tests/BankAccountSuite.class
+com/augustovictor/bankaccount/tests/HelloJUnitTest.class

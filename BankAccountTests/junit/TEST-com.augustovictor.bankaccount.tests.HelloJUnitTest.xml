@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="Victor.local" name="com.augustovictor.bankaccount.tests.HelloJUnitTest" skipped="1" tests="5" time="0.067" timestamp="2016-09-11T19:38:31">
+  <properties>
+    <property name="java.vendor" value="Oracle Corporation" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="env.XPC_SERVICE_NAME" value="org.eclipse.platform.ide.328352" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="env.APP_ICON_63534" value="../Resources/Eclipse.icns" />
+    <property name="os.name" value="Mac OS X" />
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/classes" />
+    <property name="env.TMPDIR" value="/var/folders/ln/psrt2l1j20b9fy938tb68gr40000gn/T/" />
+    <property name="user.country.format" value="BR" />
+    <property name="env.JAVA_STARTED_ON_FIRST_THREAD_63534" value="1" />
+    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+    <property name="ant.home" value="/Users/victoraweb/Downloads/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020" />
+    <property name="java.runtime.version" value="1.8.0_91-b14" />
+    <property name="env.Apple_PubSub_Socket_Render" value="/private/tmp/com.apple.launchd.ieHRzbpfzh/Render" />
+    <property name="env.DISPLAY" value="/private/tmp/com.apple.launchd.WYbg6BnK7d/org.macosforge.xquartz:0" />
+    <property name="user.name" value="victoraweb" />
+    <property name="env.USER" value="victoraweb" />
+    <property name="env.SHELL" value="/bin/zsh" />
+    <property name="env.__CF_USER_TEXT_ENCODING" value="0x1F5:0x0:0x0" />
+    <property name="env.PATH" value="/usr/bin:/bin:/usr/sbin:/sbin" />
+    <property name="user.language" value="en" />
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib" />
+    <property name="ant.project.default-target" value="build" />
+    <property name="env.XPC_FLAGS" value="0x0" />
+    <property name="ant.project.name" value="BankAccountTests" />
+    <property name="env.JAVA_STARTED_ON_FIRST_THREAD_67235" value="1" />
+    <property name="java.version" value="1.8.0_91" />
+    <property name="user.timezone" value="" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/endorsed" />
+    <property name="sun.cpu.isalist" value="" />
+    <property name="sun.jnu.encoding" value="UTF-8" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="file.separator" value="/" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="java.class.version" value="52.0" />
+    <property name="user.country" value="US" />
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="env.LOGNAME" value="victoraweb" />
+    <property name="ant.file" value="/Users/victoraweb/eclipse/jUnit-tests-bank-account/BankAccountTests/build.xml" />
+    <property name="os.version" value="10.11.6" />
+    <property name="ant.file.BankAccountTests" value="/Users/victoraweb/eclipse/jUnit-tests-bank-account/BankAccountTests/build.xml" />
+    <property name="path.separator" value=":" />
+    <property name="java.vm.version" value="25.91-b14" />
+    <property name="env.JAVA_MAIN_CLASS_67235" value="org.eclipse.ant.internal.launching.remote.InternalAntRunner" />
+    <property name="ant.library.dir" value="/Users/victoraweb/Downloads/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib" />
+    <property name="junit.output.dir" value="junit" />
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob" />
+    <property name="sun.io.unicode.encoding" value="UnicodeBig" />
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit" />
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="user.home" value="/Users/victoraweb" />
+    <property name="target" value="1.8" />
+    <property name="java.specification.vendor" value="Oracle Corporation" />
+    <property name="java.library.path" value="/Users/victoraweb/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:." />
+    <property name="java.vendor.url" value="http://java.oracle.com/" />
+    <property name="java.vm.vendor" value="Oracle Corporation" />
+    <property name="gopherProxySet" value="false" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner com.augustovictor.bankaccount.tests.HelloJUnitTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/victoraweb/eclipse/jUnit-tests-bank-account/BankAccountTests/junit/TEST-com.augustovictor.bankaccount.tests.HelloJUnitTest.xml crashfile=/Users/victoraweb/eclipse/jUnit-tests-bank-account/BankAccountTests/junitvmwatcher5097425507506283833.properties propsfile=/Users/victoraweb/eclipse/jUnit-tests-bank-account/BankAccountTests/junit8224504587473349936.properties" />
+    <property name="java.class.path" value="/Users/victoraweb/eclipse/jUnit-tests-bank-account/BankAccountTests/bin:/Users/victoraweb/Downloads/Eclipse.app/Contents/Eclipse/plugins/org.junit_4.12.0.v201504281640/junit.jar:/Users/victoraweb/Downloads/Eclipse.app/Contents/Eclipse/plugins/org.hamcrest.core_1.3.0.v201303031735.jar:/Users/victoraweb/eclipse/jUnit-tests-bank-account/BankAccount/bin:/Users/victoraweb/Downloads/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant-launcher.jar:/Users/victoraweb/Downloads/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant.jar:/Users/victoraweb/Downloads/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant-junit.jar:/Users/victoraweb/Downloads/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant-junit4.jar" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.9.4 compiled on April 29 2014" />
+    <property name="ant.file.type.BankAccountTests" value="file" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="java.vm.specification.version" value="1.8" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="sun.os.patch.level" value="unknown" />
+    <property name="debuglevel" value="source,lines,vars" />
+    <property name="env.HOME" value="/Users/victoraweb" />
+    <property name="env.ANT_HOME" value="/Users/victoraweb/Downloads/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020" />
+    <property name="java.io.tmpdir" value="/var/folders/ln/psrt2l1j20b9fy938tb68gr40000gn/T/" />
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/" />
+    <property name="env.SSH_AUTH_SOCK" value="/private/tmp/com.apple.launchd.psgRbG9Tpt/Listeners" />
+    <property name="os.arch" value="x86_64" />
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment" />
+    <property name="BankAccount.location" value="../BankAccount" />
+    <property name="java.ext.dirs" value="/Users/victoraweb/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java" />
+    <property name="user.dir" value="/Users/victoraweb/eclipse/jUnit-tests-bank-account/BankAccountTests" />
+    <property name="line.separator" value="&#xa;" />
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+    <property name="basedir" value="/Users/victoraweb/eclipse/jUnit-tests-bank-account/BankAccountTests" />
+    <property name="ant.java.version" value="1.8" />
+    <property name="ant.core.lib" value="/Users/victoraweb/Downloads/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant.jar" />
+    <property name="source" value="1.8" />
+    <property name="file.encoding" value="UTF-8" />
+    <property name="java.specification.version" value="1.8" />
+    <property name="ant.project.invoked-targets" value="HelloJUnitTest" />
+  </properties>
+  <testcase classname="com.augustovictor.bankaccount.tests.HelloJUnitTest" name="timeoutTest" time="0.001">
+    <skipped />
+  </testcase>
+  <testcase classname="com.augustovictor.bankaccount.tests.HelloJUnitTest" name="WhenMakingDepositAccountBalanceIncreases" time="0.008" />
+  <testcase classname="com.augustovictor.bankaccount.tests.HelloJUnitTest" name="NewAccountNumberIs123" time="0.0" />
+  <testcase classname="com.augustovictor.bankaccount.tests.HelloJUnitTest" name="WhenAmountProvidedNegativeExceptionIsThrown" time="0.004" />
+  <testcase classname="com.augustovictor.bankaccount.tests.HelloJUnitTest" name="WhenWithdrawalAccountBalanceDecreases" time="0.0" />
+  <system-out><![CDATA[Executed before class
+Before
+After (Used when rolling back created data)
+Before
+After (Used when rolling back created data)
+Before
+After (Used when rolling back created data)
+Before
+After (Used when rolling back created data)
+Executed after class
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

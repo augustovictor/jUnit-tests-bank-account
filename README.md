@@ -173,8 +173,8 @@
 	- **ps:** se você estiver com erros de import, crie no projeto que contém as classes a serem importadas um pacote diferente do default e mova as classes para dentro dele;
 -  Selecione a raiz dos dois projetos (Target e Testes), e os exporte como **JAR FILE**;
 	- A razão para termos exportado os dois projetos em um mesmo JAR é que na linha de comando teremos que especificar qual o path para os arquivos JAR do JUnit e para as nossas classes; No meu caso foi:
-	`java -cp junit-4.12.jar:hamcrest-core-1.3.jar:BankAccount.jar org.junit.runner.JUnitCore com.augustovictor.bankaccount.tests.HelloJUnitTest
-`
+	`java -cp junit-4.12.jar:hamcrest-core-1.3.jar:BankAccount.jar org.junit.runner.JUnitCore com.augustovictor.bankaccount.tests.HelloJUnitTest`
+	
 ```
 JUnit version 4.12
 Executed before class
@@ -192,3 +192,27 @@ Time: 0.017
 
 OK (4 tests)
 ```
+###### Executando testes com ANT
+- Basta selecionar os dois projetos e exporta-los como **ANT**;
+- Para executa-los basta clicar com o botão direito sobre o **build.xml** no projeto de testes > Run as > External tools configuration > Desmarcar o teste **build[default]** e selecionar os testes que deseja executar; **Obs:** No meu não consegui executar junto ao build;
+- Para gerar relatórios:
+	- Baixar o [ant](https://ant.apache.org/bindownload.cgi) (para qualquer diretório);
+	- Entre na pasta e no diretório bin;
+	- Execute o comando `ant -buildfile PATH_TO_YOUR_TEST_PROJECT/build.xml junitreport`;
+	- Verifique o arquivo gerado em `PATH_TO_YOUR_TEST_PROJECT/junit/index.html`;
+
+###### Executando testes com MAVEN
+
+- Exclua os arquivos `build.xml` gerados pelo ANT;
+- Clique com o botão direito sobre o projeto > Configure > Convert project to maven project > Finish;
+- O primeiro passo é definir no projeto de testes que há uma dependência do projeto principal para que este seja executado; Para isso abra o arquivo `pom.xml` do projeto de testes;
+	- Clique na aba **Dependências** e clique em add (não o 'Dependency Management');
+	- As informações para preencher os campos estão no `pom.xml` do projeto principal;
+- Adicione outra dependência, desta vez para o junit;
+	-  Valores: junit, junit, LATEST; (Estamos usando LATEST apenas para fins de estudo, mas é interessante que se especifique uma versão;
+- Agora devemos instalar nosso projeto principal no nosso repositório Maven, para que possamos usa-lo no projeto de testes;
+	- Clique com o botão direito sobre o projeto > Run as > Install Maven;
+- Normalmente os projetos têm a pasta de testes dentro do próprio diretório raiz, mas como temos projetos separados devemos configurar no `pom.xml` do projeto de testes o diretório para os arquivos teste;
+	- Abaixo da linha `<sourceDirectory>src</sourceDirectory>` insira `<testSourceDirectory>src</testSourceDirectory>`;
+- Os arquivos de testes serão executados apenas se o nome deles terminar com `Test.java`;
+- Para testar, clique com o botão direito no projeto > Run as > Maven test;
