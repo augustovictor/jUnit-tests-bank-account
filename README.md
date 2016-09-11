@@ -162,10 +162,10 @@
 
 ###### Através de uma classe
 
-- [ ] Crie uma classe com ponto de entrada principal `public static void main(String args[]) {}`;
-- [ ] Declare uma variável do tipo `JUnitCore` e a inicialize;
-- [ ] Para visualizar os outputs no console, adicione um listener na variável criada `junit.addListener(TextListener(System.out))`;
-- [ ] Defina a execução dos testes através da variável criada `junit.run(TargetTestsClass.class);`;
+- <input type="checkbox" /> Crie uma classe com ponto de entrada principal `public static void main(String args[]) {}`;
+- <input type="checkbox" /> Declare uma variável do tipo `JUnitCore` e a inicialize;
+- <input type="checkbox" /> Para visualizar os outputs no console, adicione um listener na variável criada `junit.addListener(TextListener(System.out))`;
+- <input type="checkbox" /> Defina a execução dos testes através da variável criada `junit.run(TargetTestsClass.class);`;
 
 ###### Através da linha de comando
 - [ ] Baixar as duas libs necessárias [junit e hamcrest](https://github.com/junit-team/junit4/wiki/Download-and-Install); Ps: No site de cada uma, baixar as versões **jar**;
