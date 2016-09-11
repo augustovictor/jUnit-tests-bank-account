@@ -162,16 +162,16 @@
 
 ###### Através de uma classe
 
-- <input type="checkbox" /> Crie uma classe com ponto de entrada principal `public static void main(String args[]) {}`;
-- <input type="checkbox" /> Declare uma variável do tipo `JUnitCore` e a inicialize;
-- <input type="checkbox" /> Para visualizar os outputs no console, adicione um listener na variável criada `junit.addListener(TextListener(System.out))`;
-- <input type="checkbox" /> Defina a execução dos testes através da variável criada `junit.run(TargetTestsClass.class);`;
+-  Crie uma classe com ponto de entrada principal `public static void main(String args[]) {}`;
+-  Declare uma variável do tipo `JUnitCore` e a inicialize;
+-  Para visualizar os outputs no console, adicione um listener na variável criada `junit.addListener(TextListener(System.out))`;
+-  Defina a execução dos testes através da variável criada `junit.run(TargetTestsClass.class);`;
 
 ###### Através da linha de comando
-- [ ] Baixar as duas libs necessárias [junit e hamcrest](https://github.com/junit-team/junit4/wiki/Download-and-Install); Ps: No site de cada uma, baixar as versões **jar**;
-- [ ] Criar um pacote de testes e mover as classes de teste;
+-  Baixar as duas libs necessárias [junit e hamcrest](https://github.com/junit-team/junit4/wiki/Download-and-Install); Ps: No site de cada uma, baixar as versões **jar**;
+-  Criar um pacote de testes e mover as classes de teste;
 	- **ps:** se você estiver com erros de import, crie no projeto que contém as classes a serem importadas um pacote diferente do default e mova as classes para dentro dele;
-- [ ] Selecione a raiz dos dois projetos (Target e Testes), e os exporte como **JAR FILE**;
+-  Selecione a raiz dos dois projetos (Target e Testes), e os exporte como **JAR FILE**;
 	- A razão para termos exportado os dois projetos em um mesmo JAR é que na linha de comando teremos que especificar qual o path para os arquivos JAR do JUnit e para as nossas classes; No meu caso foi:
 	`java -cp junit-4.12.jar:hamcrest-core-1.3.jar:BankAccount.jar org.junit.runner.JUnitCore com.augustovictor.bankaccount.tests.HelloJUnitTest
 `
