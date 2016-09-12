@@ -4,6 +4,8 @@ package com.augustovictor.bankaccount.tests;
 
 import static org.junit.Assert.*;
 
+import org.jmock.Expectations;
+import org.jmock.Mockery;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -17,6 +19,7 @@ import org.junit.rules.Timeout;
 
 import com.augustovictor.bankaccount.Account;
 import com.augustovictor.bankaccount.InvalidAmountException;
+import com.augustovictor.bankaccount.Notifier;
 import com.augustovictor.bankaccount.NotifierStub;
 import com.augustovictor.bankaccount.TransactionHistoryItem;
 
@@ -83,8 +86,8 @@ public class HelloJUnitTest {
 		account.makeDeposit(-5.0);
 	}
 	
-	@Rule
-	public Timeout timeout = new Timeout(20);
+//	@Rule
+//	public Timeout timeout = new Timeout(20);
 	
 	@Test
 	@Ignore
@@ -96,10 +99,22 @@ public class HelloJUnitTest {
 	
 	@Test
 	public void WhenGoalIsMetHistoryIsUpdated() throws InvalidAmountException {
+		Mockery context = new Mockery();
+		final Notifier mockNotifier = context.mock(Notifier.class);
+		account = new Account(mockNotifier);
+		context.checking(new Expectations() {{
+			// It's will pass if we get ONE 'goal met' result 
+			oneOf(mockNotifier).send("goal met");
+			// It will pass if return true
+			will(returnValue(true));
+		}});
+		
 		account.makeDeposit(200.0);
 		
 		TransactionHistoryItem result = account.getHistory().get(0);
 		assertEquals("sent: goal met", result.getMessage());
+		
+		context.assertIsSatisfied();
 	}
 
 }

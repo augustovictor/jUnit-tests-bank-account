@@ -1,8 +1,11 @@
 # JUnit
-Aplicação de testes e boas práticas com JUnit usando Eclipse.
+
+- Aplicação de testes e boas práticas com JUnit usando Eclipse.
+- Cada ponto do tutorial pode ser visualizado através do log de commits do projeto;
+
 <br />
 <br />
-<i>Última atualização: 11 de setembro, 2016 </i>
+<i>Última atualização: 12 de setembro, 2016 </i>
 
 ## Index:
 1. [JUnit Overview](#overview)
@@ -246,4 +249,21 @@ OK (4 tests)
 	-  Criar uma classe `<ClassName>Stub.java` e implementar a interface da dependência. Obs: retorne um valor aceitável nos métodos, simulando que sua execução sempre será como esperada;
 	-  Criar, na classe a ser testada, um construtor que recebe a dependência como parâmetro;
 	-  Adicionar, no projeto de testes, o stub criado como argumento às instâncias da classe com erro;
+	-  Criar um teste usando **assert** no valor esperado pelo stub;
 
+##### Mocks
+
+- Primeiramente é importante lembrar que os STUBS não testam uma funcionalidade de fato, apenas permitem que o SUT(Subject Under Test) invoque seus métodos e  *dummy data*; seja retornado;
+- É interessante verificar se um SUT está fazendo as chamadas certas para dependências. Para fazer essa verificação usaremos **MOCKS**. Que se comportam exatamente como as dependências e ainda gravam as chamadas que a ele são feitas. Além de poder ser configurado para retornar determinados dados sob dadas condições;
+- Como usar Mocks:
+	- Há vários frameworks para usar **MOCKS** em java, porém iremos utilizar o [jMock](http://www.jmock.org/download.html). Clique em binaryJars na seção **Stable** (Após o download, descompacte o JAR). **Tip**: Crie a prática de ter um diretório *Utilities* no seu SO para centralizar suas bibliotecas;
+	- Clique com o botão direito sobre o projeto de testes no Eclipse > Build Path > Add external archives... E selecione os seguintes jars:
+		- `jmock-x.x.x.jar`, `hamcrest-core-x.x.jar` e `hamcrest-library-x.x.jar`;
+	- Por conta do `jUnit` utilizar uma versão diferente do jar `hamcrest` da que acabamos de importar, podemos ter problemas ao tentar utilizar **MOCKS**;
+	- Para evitar este problema: Botão direito sobre o projeto de testes > Configure Build Path > Order and Export > Mova os `jars` `hancrest-*.jar` para cima do framework JUnit;
+- Vamos modificar agora os nossos testes para que funcionem com os **MOCKS** ao invés de **STUBs**; 
+- Verifique nos commits o ponto referente à esta seção para maior detalhamento;
+	- Insira um `Mockery context`;
+	- Crie um mock da classe, que antes era um STUB, a partir do context: `final Notifier mockNotifier = context.mock(Notifier.class);`. **Obs:** Eu mesmo criei esta classe, verifique no commit;
+	- Crie `expectations` para sua instância do Mockery `context` `context.checking(new Expectations() {{}});`;
+	- Ao final do teste verifique se tudo o que foi especificado está como esperado: `context.assertIsSatisfied();`;
