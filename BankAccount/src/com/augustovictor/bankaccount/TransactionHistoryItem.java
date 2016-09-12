@@ -1,13 +1,13 @@
 package com.augustovictor.bankaccount;
 
-public class TransactionHistory {
+public class TransactionHistoryItem {
 	private final int id;
 	private final double amount;
 	private final double balance;
 	private final String message;
 	
 
-	public TransactionHistory(int id, double amount, String historyMessage, double balance) {
+	public TransactionHistoryItem(int id, double amount, String historyMessage, double balance) {
 		this.id = id;
 		this.amount = amount;
 		this.message = historyMessage;

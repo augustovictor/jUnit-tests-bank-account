@@ -6,7 +6,7 @@ import java.util.List;
 public class Account {
     private String number = "123";
     private Double balance = 0.0;
-    private List<TransactionHistory> history = new ArrayList<TransactionHistory>();
+    private List<TransactionHistoryItem> history = new ArrayList<TransactionHistoryItem>();
     private final Double GOAL = 100.00;
 	private Notifier notifier;
 	private int historyId;
@@ -40,8 +40,8 @@ public class Account {
         	String historyMessage = "sent: goal met";
         	if(!sendMessageGoal) {
         		historyMessage = "send_error: goal met";
-        		history.add(new TransactionHistory(historyId++, amount, historyMessage, getBalance()));
         	}
+        	history.add(new TransactionHistoryItem(historyId++, amount, historyMessage, getBalance()));
         }
     }
 
@@ -52,4 +52,8 @@ public class Account {
         	setBalance(0.0);
         }
     }
+
+	public List<TransactionHistoryItem> getHistory() {
+		return this.history;
+	}
 }

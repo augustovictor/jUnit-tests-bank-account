@@ -18,6 +18,7 @@ import org.junit.rules.Timeout;
 import com.augustovictor.bankaccount.Account;
 import com.augustovictor.bankaccount.InvalidAmountException;
 import com.augustovictor.bankaccount.NotifierStub;
+import com.augustovictor.bankaccount.TransactionHistoryItem;
 
 import static org.hamcrest.CoreMatchers.*;
 
@@ -91,6 +92,14 @@ public class HelloJUnitTest {
 		for (int i = 0; i < 100000; i++) {
 			System.out.println("Timeout did not occur");
 		}
+	}
+	
+	@Test
+	public void WhenGoalIsMetHistoryIsUpdated() throws InvalidAmountException {
+		account.makeDeposit(200.0);
+		
+		TransactionHistoryItem result = account.getHistory().get(0);
+		assertEquals("sent: goal met", result.getMessage());
 	}
 
 }
