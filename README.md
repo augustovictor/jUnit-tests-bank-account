@@ -9,6 +9,7 @@ Aplicação de testes e boas práticas com JUnit usando Eclipse.
 2. [JUnit Basics](#basics)
 3. [Advanced JUnit](#advanced)
 4. [JUnit Integration](#integration)
+5. [Beyond JUnit](#beyond)
 
 <hr>
 
@@ -178,7 +179,7 @@ Aplicação de testes e boas práticas com JUnit usando Eclipse.
 	- A razão para termos exportado os dois projetos em um mesmo JAR é que na linha de comando teremos que especificar qual o path para os arquivos JAR do JUnit e para as nossas classes; No meu caso foi:
 	`java -cp junit-4.12.jar:hamcrest-core-1.3.jar:BankAccount.jar org.junit.runner.JUnitCore com.augustovictor.bankaccount.tests.HelloJUnitTest`
 	
-```
+I```
 JUnit version 4.12
 Executed before class
 I.Before
@@ -225,4 +226,15 @@ OK (4 tests)
 - Procurar por EclEmma e instalar;
 - Após o Eclipse reiniciar você irá ver um novo ícone na toolbar (Um ícone verde de 'play' sobre uma barra de progresso verde e vermelha. Oitavo ícone, no meu caso);
 - Clique sobre o projeto de testes, para que fique selecionado, e então no dropdown do menu descrito acima > Coverage as > JUnit Test;
-- No console você irá ver um relatório de % da cobertura das classes, e se abrir as classes irá ver um background verde no que está coberto por testes ou vermelho, caso determinado bloco não esteja sendo coberto;
+- No console você irá ver um relatório de % da cobertura das classes, e se abrir as classes irá ver um background verde no que está coberto por testes ou vermelho, caso determinado bloco não esteja sendo coberto; As em amarelo são as condições;
+
+### 5. <a name="beyond"></a>Beyond JUnit
+
+##### Teste contínuo
+
+- Toda vez que for detectada uma mudança em determinada parte do projeto, os testes associados aquele código serão executados;
+- Para executar esta atividade iremos utilizar o **infinitest**, que é um plugin para o eclipse e intellij.
+	- Para instalar vá ao site do [infinitest](http://infinitest.github.io/) e arraste o botão do **Eclipse**, no site, para dentro da IDE;
+	- Após a instalação você irá ver a mensagem no rodapé de que o **Infinitest** está aguardando por alterações;
+- a
+
