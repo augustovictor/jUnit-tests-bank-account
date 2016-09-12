@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
 
 import com.augustovictor.bankaccount.Account;
 import com.augustovictor.bankaccount.InvalidAmountException;
+import com.augustovictor.bankaccount.NotifierStub;
 
 import static org.junit.Assert.*;
 
@@ -29,7 +30,7 @@ public class BankAccountTheories {
 	@Theory
 	public void PositiveValuesShouldAlwaysPositiveBalance(double value) throws InvalidAmountException {
 		Assume.assumeTrue(value > 0);
-		Account acc = new Account();
+		Account acc = new Account(new NotifierStub());
 		acc.makeDeposit(value);
 		assertTrue(acc.getBalance() > 0);
 	}

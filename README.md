@@ -236,5 +236,14 @@ OK (4 tests)
 - Para executar esta atividade iremos utilizar o **infinitest**, que é um plugin para o eclipse e intellij.
 	- Para instalar vá ao site do [infinitest](http://infinitest.github.io/) e arraste o botão do **Eclipse**, no site, para dentro da IDE;
 	- Após a instalação você irá ver a mensagem no rodapé de que o **Infinitest** está aguardando por alterações;
-- a
+
+##### Dependências
+
+- Uma das maneiras mais fáceis de lhe dar com dependências quando utilizando JUnit é utilizar **STUBS**. Que é um código que se comporta como uma dependência que o seu SUT(*Subject Under Test*) utiliza;
+- Como criar um STUB (No projeto principal, não o de testes):
+	-  Criar uma interface, que irá representar nossa dependência;
+	-  Criar uma classe que implemente essa interface. Esta classe não faz muita coisa, apenas traz dados guarda informação sobre seu estado;
+	-  Criar uma classe `<ClassName>Stub.java` e implementar a interface da dependência. Obs: retorne um valor aceitável nos métodos, simulando que sua execução sempre será como esperada;
+	-  Criar, na classe a ser testada, um construtor que recebe a dependência como parâmetro;
+	-  Adicionar, no projeto de testes, o stub criado como argumento às instâncias da classe com erro;
 

@@ -14,12 +14,13 @@ import org.junit.runners.Parameterized.Parameters;
 
 import com.augustovictor.bankaccount.Account;
 import com.augustovictor.bankaccount.InvalidAmountException;
+import com.augustovictor.bankaccount.NotifierStub;
 
 @RunWith(Parameterized.class)
 public class ParameterizedTests {
 	
 	// Static because we want this object to stick around. It is associates with the class. Not objects of the class;
-	private static Account acc = new Account();
+	private static Account acc = new Account(new NotifierStub());
 	private double input;
 	private double expected;
 	

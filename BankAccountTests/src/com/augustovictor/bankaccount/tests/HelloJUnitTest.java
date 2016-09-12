@@ -17,6 +17,7 @@ import org.junit.rules.Timeout;
 
 import com.augustovictor.bankaccount.Account;
 import com.augustovictor.bankaccount.InvalidAmountException;
+import com.augustovictor.bankaccount.NotifierStub;
 
 import static org.hamcrest.CoreMatchers.*;
 
@@ -37,7 +38,7 @@ public class HelloJUnitTest {
 	@Before
 	public void setUp() {
 		System.out.println("Before");
-		account = new Account();
+		account = new Account(new NotifierStub());
 	}
 	
 	@After
