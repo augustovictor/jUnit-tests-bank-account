@@ -267,3 +267,9 @@ OK (4 tests)
 	- Crie um mock da classe, que antes era um STUB, a partir do context: `final Notifier mockNotifier = context.mock(Notifier.class);`. **Obs:** Eu mesmo criei esta classe, verifique no commit;
 	- Crie `expectations` para sua instância do Mockery `context` `context.checking(new Expectations() {{}});`;
 	- Ao final do teste verifique se tudo o que foi especificado está como esperado: `context.assertIsSatisfied();`;
+
+<hr>
+Isso é tudo, pesssoal. Podem postar dúvidas e considerações em forma de issues.
+<br />
+
+Abraço
