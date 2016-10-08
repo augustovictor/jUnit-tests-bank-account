@@ -181,7 +181,7 @@
 -  Selecione a raiz dos dois projetos (Target e Testes), e os exporte como **JAR FILE**;
 	- A razão para termos exportado os dois projetos em um mesmo JAR é que na linha de comando teremos que especificar qual o path para os arquivos JAR do JUnit e para as nossas classes; No meu caso foi:
 	`java -cp junit-4.12.jar:hamcrest-core-1.3.jar:BankAccount.jar org.junit.runner.JUnitCore com.augustovictor.bankaccount.tests.HelloJUnitTest`
-	
+
 I```
 JUnit version 4.12
 Executed before class
@@ -242,7 +242,7 @@ OK (4 tests)
 
 ##### Dependências
 
-- Uma das maneiras mais fáceis de lhe dar com dependências quando utilizando JUnit é utilizar **STUBS**. Que é um código que se comporta como uma dependência que o seu SUT(*Subject Under Test*) utiliza;
+- Uma das maneiras mais fáceis de lidar com dependências quando utilizando JUnit é utilizar **STUBS**. Que é um código que se comporta como uma dependência que o seu SUT(*Subject Under Test*) utiliza;
 - Como criar um STUB (No projeto principal, não o de testes):
 	-  Criar uma interface, que irá representar nossa dependência;
 	-  Criar uma classe que implemente essa interface. Esta classe não faz muita coisa, apenas traz dados guarda informação sobre seu estado;
@@ -261,7 +261,7 @@ OK (4 tests)
 		- `jmock-x.x.x.jar`, `hamcrest-core-x.x.jar` e `hamcrest-library-x.x.jar`;
 	- Por conta do `jUnit` utilizar uma versão diferente do jar `hamcrest` da que acabamos de importar, podemos ter problemas ao tentar utilizar **MOCKS**;
 	- Para evitar este problema: Botão direito sobre o projeto de testes > Configure Build Path > Order and Export > Mova os `jars` `hancrest-*.jar` para cima do framework JUnit;
-- Vamos modificar agora os nossos testes para que funcionem com os **MOCKS** ao invés de **STUBs**; 
+- Vamos modificar agora os nossos testes para que funcionem com os **MOCKS** ao invés de **STUBs**;
 - Verifique nos commits o ponto referente à esta seção para maior detalhamento;
 	- Insira um `Mockery context`;
 	- Crie um mock da classe, que antes era um STUB, a partir do context: `final Notifier mockNotifier = context.mock(Notifier.class);`. **Obs:** Eu mesmo criei esta classe, verifique no commit;
